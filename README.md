@@ -11,3 +11,5 @@ fourLetterCombos.txt is a big list of results
 checkWord.py is the script that resulted in fourLetterCombos.py
 	takes a long time to run because I was not a very good programmer when
 	I wrote this. 
+
+twl06.txt is the scrabble dictionary thing I used to check strings for "word" status
