@@ -8,7 +8,8 @@ fourLetterCombos.txt is a big list of results
 	and keeping those that result in a legit combination
 	of 2 (1-7) letter words or 1 8 letter word.
 
-checkWord.py is the script that resulted in fourLetterCombos.py
+checkWord.py is the script that resulted in fourLetterCombos.txt
+	it will by default output a file called fourByFours.txt or something like that
 	takes a long time to run because I was not a very good programmer when
 	I wrote this. 
 
