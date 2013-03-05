@@ -14,3 +14,5 @@ checkWord.py is the script that resulted in fourLetterCombos.txt
 	I wrote this. 
 
 twl06.txt is the scrabble dictionary thing I used to check strings for "word" status
+
+words(n).txt are lists of words that contain n letters
