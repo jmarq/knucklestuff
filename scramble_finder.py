@@ -6,17 +6,18 @@ import scramble
 
 def checkWordPairScrambles():
     words = checkwords.word_sets
+    input_tats = []
     for i in range(0,4):
         for word in words[i]:
             #0 and 6 1 and 5 24 33
             for word2 in words[6-i]:
                 w1 = word+word2
-                checkScramble(w1)
+                input_tats.append(w1)
                 # can we skip w2 if i==3? i think so...
                 if i!=3:
                     w2 = word2+word
-                    checkScramble(w2)
-
+                    input_tats.append(w2)
+    checkScrambles(input_tats)
 
 def checkScramble(word):
     scrambles = scramble.scramble(word)
@@ -26,6 +27,10 @@ def checkScramble(word):
             print "%s -> %s" % (word,tat) 
 
 
+def checkScrambles(word_list):
+    for word in word_list:
+        checkScramble(word)
 
 
-checkWordPairScrambles()
+if __name__ == "__main__":
+    checkWordPairScrambles()
