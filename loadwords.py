@@ -1,5 +1,6 @@
 import timeit
 
+# for reading words from text files into python lists
 def load_words(length, as_set=True):
     filename = "wordlists/words%d.txt" % length
     infile = open(filename,'r')
