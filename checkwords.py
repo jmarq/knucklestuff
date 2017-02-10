@@ -12,7 +12,7 @@ def is_word(s):
       return False
 
 
-
+# is a string composed of a sequence of words? see if the beginning is a word, then call this recursively on the "tail"
 def is_words(s):
     i = 1
     while i <= len(s):
