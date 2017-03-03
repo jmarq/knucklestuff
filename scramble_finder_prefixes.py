@@ -19,6 +19,9 @@ def checkWordPairScrambles():
                 if i!=3:
                     w2 = word2+word
                     input_tats.append(w2)
+    for word in words[7]:
+        input_tats.append(word)
+    input_tats = set(input_tats)
     checkScrambles(input_tats,cache)
 
 def checkScramble(word, cache):

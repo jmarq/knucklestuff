@@ -2,7 +2,7 @@ import timeit
 import funcy as f
 
 def load_words(length, as_set=True):
-    filename = "wordlists/words%d.txt" % length
+    filename = "wordlists/scrabble_words_%d.txt" % length
     infile = open(filename,'r')
     content = infile.read()
     infile.close()
@@ -15,7 +15,7 @@ def load_words(length, as_set=True):
 def load_all_words():
     word_list = []
     for i in range(1,9):
-        filename = "wordlists/words%d.txt" % i
+        filename = "wordlists/scrabble_words_%d.txt" % i
         infile = open(filename,'r')
         content = infile.read()
         infile.close()
