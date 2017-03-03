@@ -26,7 +26,7 @@ def load_all_words():
 def load_prefix_lists():
     all_words = load_all_words()
     prefix_lists = {}
-    for i in range(1,9):
+    for i in range(1,8): #only need prefixes up to 7, right? 
         prefix_lists[i] = set(f.walk(lambda d: d[0:i],all_words))
         prefix_lists[i]= f.select(lambda d: len(d)==i, prefix_lists[i])
     return prefix_lists

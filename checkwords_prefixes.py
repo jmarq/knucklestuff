@@ -31,7 +31,7 @@ def is_words(s, cache):
             elif is_words(s[i:],cache):
                 cache[s]=True
                 return True
-        if currently_checking in prefix_lists[i]:
+        if i in prefix_lists and currently_checking in prefix_lists[i]:
             i+=1
         else: 
             cache[s]=False

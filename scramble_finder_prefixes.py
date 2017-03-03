@@ -21,21 +21,21 @@ def checkWordPairScrambles():
                     input_tats.append(w2)
     for word in words[7]:
         input_tats.append(word)
-    input_tats = set(input_tats)
-    checkScrambles(input_tats,cache)
+    input_tats = list(set(input_tats))
+    checkScrambles(input_tats, cache)
 
 def checkScramble(word, cache):
     scrambles = scramble.scramble(word)
     # (s1,s2)
     for tat in scrambles:
-        if checkwords.is_words(tat,cache):
+        if checkwords.is_words(tat, cache):
             print "%s -> %s" % (word,tat) 
             pass
 
 
 def checkScrambles(word_list, cache):
     for word in word_list:
-        checkScramble(word,cache)
+        checkScramble(word, cache)
 
 
 if __name__ == "__main__":
