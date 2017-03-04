@@ -18,9 +18,10 @@ def is_word(s):
 
 
 def is_words(s, cache):
-    if s in cache:
+    cached = cache.get(s,-1)
+    if cached != -1:
 #        print "using cached value for "+s
-        return cache[s]
+        return cached
     i = 1
     while i <= len(s):
         currently_checking = s[0:i]
@@ -34,6 +35,7 @@ def is_words(s, cache):
         if i in prefix_lists and currently_checking in prefix_lists[i]:
             i+=1
         else: 
+#            print "no words start with %s" % currently_checking
             cache[s]=False
             return False
     cache[s]=False
