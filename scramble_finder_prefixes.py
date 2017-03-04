@@ -2,7 +2,7 @@
 import checkwords_prefixes as checkwords
 import scramble
 
-
+# maybe make this a Class that can store the cache as self.cache
 
 def checkWordPairScrambles():
     words = checkwords.word_sets
@@ -22,6 +22,7 @@ def checkWordPairScrambles():
     for word in words[7]:
         input_tats.append(word)
     input_tats = list(set(input_tats))
+    del words
     checkScrambles(input_tats, cache)
 
 def checkScramble(word, cache):
