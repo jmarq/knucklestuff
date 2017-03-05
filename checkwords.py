@@ -45,6 +45,5 @@ class WordsChecker(object):
         self.cache[s]=False
         return False
 
-
 if __name__=="__main__":
     pass
