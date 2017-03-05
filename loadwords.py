@@ -1,7 +1,7 @@
 import timeit
 import funcy as f
 
-def load_words(length, as_set=True):
+def load_word_set_by_length(length, as_set=True):
     filename = "wordlists/scrabble_words_%d.txt" % length
     infile = open(filename,'r')
     content = infile.read()

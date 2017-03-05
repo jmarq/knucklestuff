@@ -1,14 +1,15 @@
 #check words using prefix lists in algorithm somehow?
 
-from loadwords import load_words, load_prefix_lists
+from loadwords import load_word_set_by_length, load_prefix_lists, load_all_words
 
 class WordsChecker(object):
     def __init__(self):
         super(WordsChecker,self).__init__()
         self.word_sets = []
         for i in range(0,8):
-            self.word_sets.append(load_words(i+1))
+            self.word_sets.append(load_word_set_by_length(i+1))
         self.prefix_lists = load_prefix_lists()
+        self.all_words = set(load_all_words())
         self.cache = {}
 
     def is_word(self,s):
@@ -16,7 +17,7 @@ class WordsChecker(object):
         #  use one big list rather than 8 lists
         #  and get rid of length checks, word_sets lookup, subtraction, etc.
         if s:
-            return s in self.word_sets[len(s)-1]
+            return s in self.all_words
         else:
             return False
     

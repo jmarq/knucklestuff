@@ -1,4 +1,5 @@
 *.pyc
+*.swp
 results.txt
 notes.txt
 scrabble_results.txt
