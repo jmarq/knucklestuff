@@ -1,4 +1,4 @@
-from checkwords_oop import WordsChecker 
+from checkwords import WordsChecker 
 import timeit
 import unittest
 

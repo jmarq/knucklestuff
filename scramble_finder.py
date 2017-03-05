@@ -1,5 +1,5 @@
 # this file is used to actually loop through starting tattoos, scramble them, and then check to see if the scrambles are composed of real words
-from checkwords_oop import WordsChecker
+from checkwords import WordsChecker
 from collections import deque
 import scramble
 

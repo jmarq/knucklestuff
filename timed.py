@@ -1,5 +1,5 @@
 from timeit import timeit
-from scramble_finder_oop import ScrambleFinder
+from scramble_finder import ScrambleFinder
 
 def init_scramblefinder():
     scramble_finder = ScrambleFinder(limit=1000)
