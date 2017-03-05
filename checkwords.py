@@ -16,10 +16,11 @@ class WordsChecker(object):
         # maybe since we're using sets and not lists we could
         #  use one big list rather than 8 lists
         #  and get rid of length checks, word_sets lookup, subtraction, etc.
-        if s:
-            return s in self.all_words
-        else:
-            return False
+        #if s:
+        #    return s in self.all_words
+        #else:
+        #    return False
+        return s in self.all_words
     
     def is_words(self,s):
         cached = self.cache.get(s,-1)

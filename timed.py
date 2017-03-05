@@ -5,7 +5,7 @@ def init_scramblefinder():
     scramble_finder = ScrambleFinder(limit=1000)
 
 def run_scramblefinder():
-    scramble_finder = ScrambleFinder(limit=1000000)
+    scramble_finder = ScrambleFinder()
     scramble_finder.checkScrambles()
 
 

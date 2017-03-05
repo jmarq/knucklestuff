@@ -1,5 +1,6 @@
 # this file is used to actually loop through starting tattoos, scramble them, and then check to see if the scrambles are composed of real words
 from checkwords import WordsChecker
+from loadwords import load_word_set_by_length
 from collections import deque
 import scramble
 
@@ -9,15 +10,18 @@ class ScrambleFinder(WordsChecker):
     def __init__(self, limit = False):
         super(ScrambleFinder,self).__init__()
         self.input_tats = []
+        word_sets = []
+        for i in range(0,8):
+            word_sets.append(load_word_set_by_length(i+1))
         for i in range(0,4):
-            for word in self.word_sets[i]:
-                for word2 in self.word_sets[6-i]:
+            for word in word_sets[i]:
+                for word2 in word_sets[6-i]:
                     w1 = word+word2
                     self.input_tats.append(w1)
                     if i!=3:
                         w2 = word2+word
                         self.input_tats.append(w2)
-        for word in self.word_sets[7]:
+        for word in word_sets[7]:
             #add the 8 letter words
             self.input_tats.append(word)
         #apply limit if exists
