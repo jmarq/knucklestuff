@@ -6,7 +6,7 @@ import scramble
 # maybe make this a Class that can store the cache as self.cache
 
 class ScrambleFinder(WordsChecker):
-    def __init__(self):
+    def __init__(self, limit = False):
         super(ScrambleFinder,self).__init__()
         self.input_tats = []
         for i in range(0,4):
@@ -20,6 +20,9 @@ class ScrambleFinder(WordsChecker):
         for word in self.word_sets[7]:
             #add the 8 letter words
             self.input_tats.append(word)
+        #apply limit if exists
+        if limit:
+            self.input_tats = self.input_tats[0:limit]
         #get rid of duplicates
         self.input_tats = deque(set(self.input_tats))
     

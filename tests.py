@@ -1,21 +1,28 @@
-import checkwords
+from checkwords_oop import WordsChecker 
 import timeit
 import unittest
 
 class TestWordCheck(unittest.TestCase):
-  
+
+    @classmethod
+    def setUpClass(cls):
+        cls.checker = WordsChecker()
+
+    def setUp(self):
+        self.checker.cache = {}
+
     def testWoodshed(self):
-        self.assertEquals(checkwords.is_word("woodshed"), True)
+        self.assertEquals(self.checker.is_word("woodshed"), True)
 
     def testdog(self):
-        self.assertEquals(checkwords.is_word("dog"),True)
+        self.assertEquals(self.checker.is_word("dog"),True)
 
     def testxxxyz(self):
-        self.assertEquals(checkwords.is_word("xxxyz"),False) 
+        self.assertEquals(self.checker.is_word("xxxyz"),False) 
 
     # test multiword match
     def testboomboom(self):
-        self.assertEquals(checkwords.is_words("boomboom"),True)
+        self.assertEquals(self.checker.is_words("boomboom"),True)
 
 
 if __name__ == "__main__":
