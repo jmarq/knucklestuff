@@ -27,8 +27,12 @@ def load_prefix_lists():
     all_words = load_all_words()
     prefix_lists = {}
     for i in range(1,8): #only need prefixes up to 7, right? 
-        prefix_lists[i] = set(f.walk(lambda d: d[0:i],all_words))
-        prefix_lists[i]= f.select(lambda d: len(d)==i, prefix_lists[i])
+        # ignore words that are the length of the prefix or less
+        long_enough_words = f.select(lambda d: len(d)>i, all_words)
+        # grab the first i letters
+        prefix_lists[i] = set(f.walk(lambda d: d[0:i],long_enough_words))
+        # this line is probably extraneous at this point, right? 
+        # prefix_lists[i]= f.select(lambda d: len(d)==i, prefix_lists[i])
     return prefix_lists
     # {'a': ['a','and','android'] ...}
 # trying something different
