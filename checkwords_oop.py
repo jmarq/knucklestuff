@@ -1,6 +1,6 @@
 #check words using prefix lists in algorithm somehow?
 
-from dictwords import load_words, load_prefix_lists
+from loadwords import load_words, load_prefix_lists
 
 class WordsChecker(object):
     def __init__(self):
