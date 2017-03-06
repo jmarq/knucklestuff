@@ -13,7 +13,7 @@ class WordsChecker(object):
         self.cache = {}
 
     def is_word(self,s):
-        # maybe since we're using sets and not lists we could
+        # eventually you should more precisely time the difference between these two.  it is close, but which is better?
         #  use one big list rather than 8 lists
         #  and get rid of length checks, word_sets lookup, subtraction, etc.
         #if s:
@@ -22,6 +22,10 @@ class WordsChecker(object):
         #    return False
         return s in self.all_words
     
+    # need to make the use of a cache optional, in case machine doesn't have enough memory.
+    # how best to do this, without adding much extra checking to the method itself, which will be called millions of times?
+    # maybe another method entirely, and the decision on which one to use could be made once upfront, either in init method here 
+    #  or in the code that actually calls .is_words(s)
     def is_words(self,s):
         cached = self.cache.get(s,-1)
         if cached != -1:
