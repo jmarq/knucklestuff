@@ -11,6 +11,7 @@ class ScrambleFinder(WordsChecker):
         super(ScrambleFinder,self).__init__()
         self.input_tats = []
         word_sets = []
+        # load words grouped by length, to create pairs that add up to 8 for the tattoo
         for i in range(0,8):
             word_sets.append(load_word_set_by_length(i+1))
         for i in range(0,4):
