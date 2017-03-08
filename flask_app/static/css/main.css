@@ -1,0 +1,17 @@
+body{
+  background-color: #222;
+  color: #eee;
+	padding: 20px;
+	font-size: 24px;
+}
+
+h1.title{
+  color: #eee;
+	text-decoration: underline;
+	margin-bottom: 10px;
+}
+
+table.table.tat-table{
+	max-width: 900px;
+	margin-top: 10px;
+}

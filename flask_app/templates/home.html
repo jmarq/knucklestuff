@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knuckle Tattoo List</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css">
+	<link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+	<section class="knuckle-tattos">
+
+		<header>
+			<h1 class="title">Knuckle Tats in the Database</h1>
+			{% if data.query %}
+			  <h2>search term: {{ data.query}}</h2>
+			{% endif %}
+
+			<form action="" method="GET">
+				<p class="control has-addons">
+					<input class="input" type="text" name="q" placeholder="search tats">
+					<button class="button is-info">search</button>
+				</p>
+			</form>
+		</header>
+
+		<table class="table tat-table">
+			<thead>
+				<tr>
+					<th>Unscrambled</th>
+					<th>Scrambled</th>
+				</tr>
+			</thead>
+			<tbody>
+		  {% for tat in data.tats %}
+				<tr>
+					<td>{{ tat.base}}</td>
+					<td>{{tat.scrambled}}</td>
+				</tr>
+			{% endfor %}	
+			</tbody>
+		</table>
+
+	</section>
+
+</body>
+</html>
