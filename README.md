@@ -15,7 +15,8 @@ the amount of processing the program does can lead to running times of several m
 ## usage
 - see WARNING above
 - install pip requirements "pip install -r requirements.txt"
+- if desired, edit the word lists in wordlists/, adding words that are meaningful to you, deleting words that aren't.  
 - run the scramble finder "python scramble_finder.py" *this just prints the result to the console.  if you want to save to a file, you can redirect the output to a file: "python scramble_finder.py >> results.txt"*
-
+- if you want, once you have a txt file of results you can use the code in /flask_app to populate a database and serve/query the results via a simple web app. *see the readme in /flask_app*
 
 
