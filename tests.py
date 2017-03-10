@@ -1,6 +1,7 @@
 from checkwords import WordsChecker 
-import timeit
+# import timeit
 import unittest
+
 
 class TestWordCheck(unittest.TestCase):
 
@@ -15,14 +16,14 @@ class TestWordCheck(unittest.TestCase):
         self.assertEquals(self.checker.is_word("woodshed"), True)
 
     def testdog(self):
-        self.assertEquals(self.checker.is_word("dog"),True)
+        self.assertEquals(self.checker.is_word("dog"), True)
 
     def testxxxyz(self):
-        self.assertEquals(self.checker.is_word("xxxyz"),False) 
+        self.assertEquals(self.checker.is_word("xxxyz"), False)
 
     # test multiword match
     def testboomboom(self):
-        self.assertEquals(self.checker.is_words("boomboom"),True)
+        self.assertEquals(self.checker.is_words("boomboom"), True)
 
 
 if __name__ == "__main__":

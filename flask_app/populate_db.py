@@ -10,15 +10,15 @@ source_filename = "../scrabble_results.txt"
 source_file = open(source_filename, 'r')
 source_content = source_file.read().strip().split("\n")
 
+
 # create a tattoo model object for each line using this function
 def process_line(line):
     split_line = line.split("->")
-    split_line = [ half.strip() for half in split_line ]
-    new_tat = Tattoo(split_line[0],split_line[1])
+    split_line = [half.strip() for half in split_line]
+    new_tat = Tattoo(split_line[0], split_line[1])
     db.session.add(new_tat)
 
-for line in source_content:
-    process_line(line)
+for source_line in source_content:
+    process_line(source_line)
 
 db.session.commit()
-
