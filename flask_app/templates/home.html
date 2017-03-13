@@ -1,3 +1,22 @@
+{% macro tat_table(tat_list) -%}
+		<table class="table tat-table">
+			<thead>
+				<tr>
+					<th>Unscrambled</th>
+					<th>Scrambled</th>
+				</tr>
+			</thead>
+			<tbody>
+		  {% for tat in tat_list %}
+				<tr>
+					<td>{{ tat.base}}</td>
+					<td>{{tat.scrambled}}</td>
+				</tr>
+			{% endfor %}	
+			</tbody>
+		</table>
+{%- endmacro %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,23 +41,7 @@
 				</p>
 			</form>
 		</header>
-
-		<table class="table tat-table">
-			<thead>
-				<tr>
-					<th>Unscrambled</th>
-					<th>Scrambled</th>
-				</tr>
-			</thead>
-			<tbody>
-		  {% for tat in data.tats %}
-				<tr>
-					<td>{{ tat.base}}</td>
-					<td>{{tat.scrambled}}</td>
-				</tr>
-			{% endfor %}	
-			</tbody>
-		</table>
+		{{ tat_table(data.tats) }}
 
 	</section>
 
